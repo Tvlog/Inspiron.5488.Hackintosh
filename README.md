@@ -1,82 +1,121 @@
-# DELL-5488 Opencore EFI Hackintosh
+# 重要声明‼️
+1⃣️ 没有所谓的完美，真想完美请买白果，想折腾的自己搞，不想自己折腾的还是算了吧，各种坑巨多。2024年黑苹果已经没有任何优势了，最便宜的Mac mini体验都远超黑苹果<BR>
+2⃣️ 至少要懂得基本的硬件与软件知识，懂得如何重装Windows。剩下的按照Opencore安装指南一步一步走，别做过多动作，想太多不一定是好事，步子太大容易扯蛋<BR>
+3⃣️ 黑苹果的安装是循序渐进的过程，刚开始安装不要想太多(如电池，触控，显存)，保证最基本开机进系统就可以，后续再根据平时个人的使用情况，逐步定制各个驱动，使各个部件运行正常。这是一个非常漫长的过程<BR>
+4⃣️ 可启动U盘EFI分区复制到磁盘，不要剪切，避免因为修改某些参数故障开不了机，这样至少U盘还可用。最重要的是注意备份数据，安装过程避免不了多次全格！！！<BR>
 
-## 说明  
-DELL-inspiron-5488 的黑苹果 EFI
+## 维护声明
+开端：苹果在WWDC 2020上首次宣布从英特尔过渡到Apple Silicon的计划，苹果CEO蒂姆·库克预计过渡时间需要两年。
+
+序章：苹果在今年WWDC 2023展上，推出了搭载 M2 Ultra 芯片的 Mac Pro，正式完成了从 Intel 到 Apple Silicon 的过渡。
+
+结局：2023年6月Apple已经完成了从 Intel 到 Apple Silicon 的过渡。黑苹果的环境只会越来越差，这个repository被放弃了也即将到来，未来几乎不会有任何更新。你可以fork并修改它，我将不再更新和维护它，但是我想以此来作为黑苹果目录结构最完善的说明文件。
+
+# Dell-Inspiron-14-5488 Opencore EFI Hackintosh
+ 
+Dell-inspiron-14-5488 的黑苹果 EFI
 
 当前支持 Monterey 12(A), Ventura 13(A), Sonoma 14(A)
 
-🎬:Sonoma 14部分功能异常，14.2仍存在，待观察解决中...
+> Sonoma 14部分功能异常，14.2仍存在，待观察解决中...
 
 
-## 电脑配置
-| 规格     | 详细信息                                     |
-| -------- | ---------------------------------------- |
-| 电脑型号 | DELL-inspiron-5488             |
-| 处理器   | 英特尔 酷睿 i5-8265u处理器             |
-| 内存     | 金士顿 8GBx2  DDR4 2666MHz（U板只支持到2400） |
-| 硬盘     | 西部数据 NVMe固态硬盘 sn520 1TB         |
-| 硬盘     | 西部数据 SATA固态硬盘 蓝盘 2TB                  |
-| 集成显卡 | Intel GMA UHD 620                          |
-| 独立显卡 | NVIDIA GeForce MX250   无法驱动，通过SSDT屏蔽   |
-| 声卡     | Realtek ALC236/ALC3204                   |
-| 无线网卡 | AX200 160MHZ                   |
-| 有线网卡 | Realtek PCIe Ethernet Controller Driver                  |
-| 指纹    | Goodix Fingerprint Sensor Driver 无法驱动，通过定制USB屏蔽  |
-| 摄像头  | UVC Camera 功能正常                        |
-| 读卡器  |Realtek Memory Card Reader Driver      通过USB定制功能正常   |
+### 电脑配置与驱动情况
 
-🎬:指纹没必要屏蔽，耗电极低
+|  规格             |         Feature                 |           Status                     |
+|---------------------|---------------------------------|--------------------------------------|
+| 电脑型号 | DELL-inspiron-5488             |:computer:| 
+| CPU              | Intel® Core™ i5-8265U Processor|:white_check_mark: | 
+| iGPU             | Intel® UHD Graphics 620            |:white_check_mark: | 
+| dGPU | NVIDIA GeForce MX250 ID:1D13  |:x: | 
+| Audio            | Realtek ALC236&ALC3204        |:white_check_mark: | 
+| RAM              | 2x8 GB DDR4 2666 MHz(实际运行2400MHz)                |:white_check_mark: | 
+| network | Realtek PCIe Ethernet Controller Driver  |:white_check_mark: | 
+| WiFi + Bluetooth | Wifi6 AX200 Bluetooth 5.1  |:white_check_mark: | 
+| Storage 1           | NVMe 512GB SSD       |:white_check_mark: | 
+| Storage 2           | SATA 2TB SSD       |:white_check_mark: | 
+| TF Card reader | Realtek PCI-E Card Reader, 152D:1237 |:white_check_mark: | 
+|屏幕|BOE CQ NV105WAM-N31, BOE088B|:white_check_mark: | 
+|分辨率|14 inch 16:9, 1920 x 1080 pixel 220 PPI, 10-Point Capacitive|:white_check_mark: | 
+|摄像头|Integrated_Webcam_HD UVC Camera|:white_check_mark: | 
+|触控板|Microsoft type cover|:white_check_mark: | 
+|电池|26.81Wh 7.66v 41000mAh|:white_check_mark: | 
+|指纹| Goodix Fingerprint Sensor Driver |:x: | 
+|其他设备(若有)|触摸屏,NFC,LTE,GPS,Accelerometers,light sensors,compass|:white_check_mark: | 
+
+|  Status             |         Feature                 |            Note                      |
+|---------------------|---------------------------------|--------------------------------------|
+|  :white_check_mark: |  Graphic Acceleration          |  QE/CI works |
+|  :white_check_mark: |  WiFi & Bluetooth              |  With [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm) |
+|  :white_check_mark: |  Audio                         |  With AppleALC   |
+|  :white_check_mark: |  USB                         |  With USBToolBox   |
+|  :heavy_exclamation_mark: |  dGPU        |无法驱动，通过SSDT屏蔽| 
+|  :heavy_exclamation_mark: |  指纹        |无法驱动，未屏蔽，可通过定制USB屏蔽| 
 
 
-## BIOS设置
+### BIOS设置
 ||||
 --|-------------------------------------------|-----------
 1 |General \ Boot Sequence-Boot List Option |  [UEFI]
 2 |System Configuration \ SATA Operation       |  [AHCI]
 3 |Secure Boot \ Secure Boot Enable            | [Disabled]
 4 |Virtualization Support \ Virtualization    |  [Enable]
-5 |Virtualization Support \ VT for Direct I/O |  [Enable] [Disabled]
-6 |Security Device Support                    | [Enabled] （Win11 - TPM 2.0）
-7 |SupportAssist System Resolution \ Auto OSRecovery Threshold | [Disabled]
-8 |Intel SGE \ Intel SGX Enable            | [Enable] [Disabled]
+5 |Security Device Support                    | [Enabled] （Win11 - TPM 2.0）
+6 |SupportAssist System Resolution \ Auto OSRecovery Threshold | [Disabled]
 
-🎬:选项5⃣️8⃣️可根据个人情况开关，5⃣️建议保持打开，config.plist已做设置，8⃣️若不使用Windows指纹功能建议关闭
+**Options modified**
+|| Name   | From    | To |
+|----| ---------------- | --------- | --------- |
+|1| Virtualization Support \ VT for Direct I/O | Enable | Disable |
+|2| Intel SGE \ Intel SGX Enable | Enable | Disable |
 
-
-## 已知问题
-1⃣️ ~~耳麦无法使用。需定制AppleALC解决，过程较为复杂，暂时搁浅~~ 已解决✅
-
-2⃣️ 英特尔网卡蓝牙模块无法按预期睡眠。睡眠后蓝牙崩溃或连接丢失，Bluetoothd占用大量CPU资源，风扇狂转。浅度睡眠低概率复发，深度睡眠百分百复发，建议关闭蓝牙以解决
-
-3⃣️ ~~极低概率仍会出现Sleep Wake Failure in EFI，后重启，二分法尝试解决中...~~ 已阶段性解决，代固化⌛️
-
-4⃣️ 开机时间一长，iCloud上传下载不可用，任何操作均会进入等待队列🚫，注销后进入恢复正常 暂无解决头绪，用注销缓释，可能更换系统版本可以解决
-
-5⃣️ Sonoma14.0,14.1,14.2查找Mac，iMessage，FaceTime认证过程出现错误，可能网卡内建，Inter Wi-Fi正式版更新能解决 弃坑Sonoma感觉不太适合Hackintosh
+> 第二个Table打开与关闭均可,可根据个人情况灵活调整 1⃣建议保持打开,config.plist已做设置 2⃣若不使用Windows指纹功能可以关闭
 
 
-## 常见问题及解决
+### 已知故障
+可以解决的
+- [x] 已解决。耳麦无法使用。需定制AppleALC解决,过程较为复杂,暂时搁浅
+- [x] 进行中。极低概率仍会出现Sleep Wake Failure in EFI,后重启，二分法尝试解决中,代固化⌛️
+- [ ] 未解决。开机时间一长，iCloud上传下载不可用,任何操作均会进入等待队列🚫,注销后进入恢复正常。无解决头绪，用注销缓释,可能更换系统版本可以解决
+- [ ] 未解决。Sonoma14.0,14.1,14.2查找Mac，iMessage，FaceTime认证过程出现错误。可能网卡内建，Inter Wi-Fi正式版更新可能解决，弃坑Sonoma感觉不太适合Hackintosh
+
+不能解决的
+- [ ] 英特尔网卡蓝牙模块无法按预期睡眠。睡眠后蓝牙崩溃或连接丢失，Bluetoothd占用大量CPU资源，风扇狂转。浅度睡眠低概率复发，深度睡眠百分百复发。建议关闭蓝牙以解决
+
+
+
+### 常见问题及答案
 1⃣️ Sleep Wake Failure in EFI：SMBIOS需自行更新，CPUFriendProvider数据需根据个人情况自行生成[CPUFriendFriend](https://github.com/corpnewt/CPUFriendFriend)
 [i58265u](https://ark.intel.com/content/www/cn/zh/ark/products/149088/intel-core-i58265u-processor-6m-cache-up-to-3-90-ghz.html)
 
-若仍未解决问题，则：请使用命令或者 Hackintool 修复休眠模式 hibernatemode 和 proximitywake.   
-	如果唤醒弹窗 “电脑关机是因为发生了问题” , 请前往 “控制台” 删除 “诊断报告” 中所有日志. （主要是 “Sleep Wake Failure” 相关的）  
-	另外BIOS 可开启 “PCIE设备唤醒” 和 “网络唤醒”, 将支持键鼠唤醒. （不要开启 USB Standby Power at S4/S5）  
+&emsp;&emsp;若仍未解决问题，则：请使用命令或者 Hackintool 修复休眠模式 hibernatemode 和 proximitywake.   
+如果唤醒弹窗 “电脑关机是因为发生了问题” , 请前往 “控制台” 删除 “诊断报告” 中所有日志. （主要是 “Sleep Wake Failure” 相关的）  
+另外BIOS 可开启 “PCIE设备唤醒” 和 “网络唤醒”, 将支持键鼠唤醒. （不要开启 USB Standby Power at S4/S5）  
 	
     设置 hibernatemode 和 proximitywake：
-- ###### `sudo pmset -a hibernatemode 0`
-- ###### `sudo pmset -a proximitywake 0`
+```
+sudo pmset -a hibernatemode 0
+sudo pmset -a proximitywake 0
+```
 
 2⃣️ 双系统时间不一致：Windows导入注册表采用UTC记时法
 
     Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
 
 3⃣️ [背光问题解决方案](https://github.com/acidanthera/WhateverGreen/commit/e2d3d20f7eadd8cf89991514c475daab3c0bdf0f)
++ **修复在 Kaby Lake/Coffee Lake 平台上运行 macOS 13.4 或以上版本的笔记本开机持续3分钟暗屏问题**
+
+&emsp;&emsp;如果你之前使用“亮度寄存器修复”（也就是 `-igfxblr` 这个启动参数）来解决笔记本开机持续3分钟左右暗屏的问题，在升级到 macOS 13.4 或之后的版本后你会发现该补丁失效了。这是因为苹果简化了显卡驱动中读写寄存器相关的函数，导致编译器优化了函数调用的汇编代码，进而导致“亮度寄存器修复”以及“亮度丝滑器”注册的钩子失效。从 v1.6.5 开始，*WEG* 提供了新的补丁来撤销编译器对亮度调节相关函数的优化以及为 Coffee Lake 平台的笔记本重写了调节亮度的函数，从而解决开机持续3分钟暗屏以及“亮度丝滑器”失效的问题。从 v1.6.6 开始，*WEG* 支持 Kaby Lake 平台。
+
+&emsp;&emsp;请注意这个新补丁仅适用于使用 macOS 13.4 以及以上的 Kaby Lake 或者 Coffee Lake 核显驱动的笔记本用户。你可以为核显添加 `enable-backlight-registers-alternative-fix` 属性或者直接使用 `-igfxblt` 启动参数来启用这个新的补丁。与此同时，你可以删除原“亮度寄存器修复”的 `enable-backlight-registers-fix` 设备属性或者 `-igfxblr` 启动参数。如果你想在 macOS 13.4 或以上系统中使用“亮度丝滑器”，你需要添加 `-igfxblt` 以及 `-igfxbls` 这两个启动参数。
+
+&emsp;&emsp;请注意 Ice Lake 平台的笔记本用户不受此问题影响。
+
+    https://github.com/acidanthera/WhateverGreen/blob/c5a5f507f54a6ff1d17e048fb9456302ef2a3702/Manual/FAQ.IntelHD.cn.md
 
 + **调整亮度丝滑器设置以提升用户体验**
 
-为核显添加 `enable-backlight-smoother` 属性或者直接使用 `-igfxbls` 启动参数以使核显亮度调节变得更丝滑。
-
+&emsp;&emsp;为核显添加 `enable-backlight-smoother` 属性或者直接使用 `-igfxbls` 启动参数以使核显亮度调节变得更丝滑。
 核显驱动通过修改亮度相关的寄存器的值来调整笔记本内屏的亮度。亮度丝滑器通过拦截这些写入操作并循循渐进地修改寄存器的值来实现亮度调节更丝滑的效果。
 打个比方的话，核显驱动的工作方式犹如走楼梯让屏幕一下子变亮或变暗，而亮度丝滑器好比坐扶梯来让屏幕慢慢地变亮或变暗。
 亮度丝滑器首先读取当前亮度档位对应的寄存器值 `SRC` 并计算到目标值 `DST` 的距离 `D`。 而后每 `T` 毫秒向目标值走一步，并在 `N` 步之内走完。
@@ -84,7 +123,6 @@ DELL-inspiron-5488 的黑苹果 EFI
 然而我们建议 `T` 的值不要高于 10 毫秒，并且达到目标值所需要的时间 `N * T` 不要高于 350 毫秒以避免调节亮度时产生阶梯式卡顿现象。
 此外，用户可通过 `backlight-smoother-threshold` 属性来指定一个最小的距离 `DM`，以让驱动检测到 `D` 小于 `DM` 时跳过丝滑器直接向寄存器写入目标值。
 默认情况下，`DM` 为 0。
-
 如果不希望笔记本内屏在亮度最低时黑屏，用户可通过 `backlight-smoother-lowerbound` 属性来自定义最低亮度档位对应的寄存器值。
 同理，`backlight-smoother-upperbound` 属性控制最高亮度档位对应的寄存器值。请参考下面的例子来找到适合你笔记本的值。
 若用户未注入这两个属性的话，BLS 使用默认的区间 [0, 2^32-1]。
@@ -178,19 +216,10 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 
 </details>
 
-+ **修复在 Kaby Lake/Coffee Lake 平台上运行 macOS 13.4 或以上版本的笔记本开机持续3分钟暗屏问题**
-
-如果你之前使用“亮度寄存器修复”（也就是 `-igfxblr` 这个启动参数）来解决笔记本开机持续3分钟左右暗屏的问题，在升级到 macOS 13.4 或之后的版本后你会发现该补丁失效了。这是因为苹果简化了显卡驱动中读写寄存器相关的函数，导致编译器优化了函数调用的汇编代码，进而导致“亮度寄存器修复”以及“亮度丝滑器”注册的钩子失效。从 v1.6.5 开始，*WEG* 提供了新的补丁来撤销编译器对亮度调节相关函数的优化以及为 Coffee Lake 平台的笔记本重写了调节亮度的函数，从而解决开机持续3分钟暗屏以及“亮度丝滑器”失效的问题。从 v1.6.6 开始，*WEG* 支持 Kaby Lake 平台。
-
-请注意这个新补丁仅适用于使用 macOS 13.4 以及以上的 Kaby Lake 或者 Coffee Lake 核显驱动的笔记本用户。你可以为核显添加 `enable-backlight-registers-alternative-fix` 属性或者直接使用 `-igfxblt` 启动参数来启用这个新的补丁。与此同时，你可以删除原“亮度寄存器修复”的 `enable-backlight-registers-fix` 设备属性或者 `-igfxblr` 启动参数。如果你想在 macOS 13.4 或以上系统中使用“亮度丝滑器”，你需要添加 `-igfxblt` 以及 `-igfxbls` 这两个启动参数。
-
-请注意 Ice Lake 平台的笔记本用户不受此问题影响。
-
-    https://github.com/acidanthera/WhateverGreen/blob/c5a5f507f54a6ff1d17e048fb9456302ef2a3702/Manual/FAQ.IntelHD.cn.md
 
 4⃣️ 适应键盘布局
 
-在 Windows PC 专用键盘上，请用 Alt 键代替 Option 键，用 Ctrl 键或 Windows 标志键代替 Command 键。
+&emsp;&ensp;在 Windows PC 专用键盘上，请用 Alt 键代替 Option 键，用 Ctrl 键或 Windows 标志键代替 Command 键。
 
 Mac 菜单和键盘通常会使用符号来表示某些按键，其中包括以下修饰键：
 
@@ -201,17 +230,18 @@ Mac 菜单和键盘通常会使用符号来表示某些按键，其中包括以�
 | Option ⌥   |Alt|
 |Control ⌃|Ctrl|
 |Caps Lock ⇪|一致|
-|Fn ![mac-fn-key-globe-icon](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/assets/141799395/2142eee3-6476-4a5a-92d1-1d83eafbc690)|一致|
-
-![键盘图示](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/assets/141799395/db345528-ce4e-4dbc-b4a0-47263b6ae460)
+|Fn![mac-fn-key-globe-icon](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/237ae87e-bd12-4d3d-abd3-455bb242e497)|一致|
 
 
-# 效果展示
-![变频功能正常](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/848bccf963b707018c5412e96fc13a50c47eeb52/Picture/cpufriend.png)
+## 成果展示🏅️
+![CPU变频档位正常](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/a7edf221-861b-4c6c-8d49-506df940bb93)
+![SMBIOS](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/1c22563b-a13b-4884-9ba9-b7f3382a7a5d)
+![SMBIOS·2018·15 2](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/e79b3d9c-4278-4df9-8f9f-dafbd7db2eaa)
+![SMBIOS1·2019·15 4](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/62d9dcf1-8d31-4c8d-9cfd-a2fbb267ddfe)
 
-
-# AppleALC定制过程
-![Ubuntu环境下提取codec0](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/2023-11-24%2006-19-06%E6%8F%90%E5%8F%96codec.png)
-![修改对应节点信息](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/%E4%BF%AE%E6%94%B9%E8%8A%82%E7%82%B9.png)
-![修改完成的四份文件编译AppleALC](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/%E7%BC%96%E8%AF%91AppleALC(MacKernelSDK%E4%B8%8ELiu).png)
-![成品AppleALC](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/Archive.png)
+## 部分定制教程
+### AppleALC定制过程
+![Ubuntu环境下提取codec](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/3ac97c79-7e66-4879-bea5-9f9eb0f1d518)
+![修改节点](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/82b8f6f1-de3d-4f0c-8994-a315a2e828e2)
+![编译AppleALC(MacKernelSDK与Liu)](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/33e8b2f1-a677-46a2-88e8-5542a7e33709)
+![编译成功Archive](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/55b579e2-87fc-4dce-89d2-32682babf194)

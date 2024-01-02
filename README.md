@@ -49,6 +49,7 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 |  :white_check_mark: |  WiFi & Bluetooth              |  With [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm) |
 |  :white_check_mark: |  Audio                         |  With AppleALC   |
 |  :white_check_mark: |  USB                         |  With USBToolBox   |
+|                     |                                |                   |
 |  :heavy_exclamation_mark: |  dGPU        |无法驱动，通过SSDT屏蔽| 
 |  :heavy_exclamation_mark: |  指纹        |无法驱动，未屏蔽，可通过定制USB屏蔽| 
 

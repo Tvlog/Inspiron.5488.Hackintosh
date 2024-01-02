@@ -1,0 +1,99 @@
+﻿英特尔® 产品规格对比
+2023/11/22 10:40:02
+ ,Intel® Core™ i5-8259U Processor ,Intel® Core™ i5-8265U Processor ,Intel® Core™ i5-8257U Processor 
+基本要素
+产品集,第八代智能英特尔® 酷睿™ i5 处理器,第八代智能英特尔® 酷睿™ i5 处理器,第八代智能英特尔® 酷睿™ i5 处理器
+垂直市场,Mobile,Mobile,Mobile
+处理器编号,i5-8259U,i5-8265U,i5-8257U
+光刻,14 nm,14 nm,14 nm
+建议客户价格,$320.00,$297.00,$320.00
+
+CPU 规格
+内核数,4,4,4
+线程数,8,8,8
+最大睿频频率,3.80 GHz,3.90 GHz,3.90 GHz
+英特尔® 睿频加速技术 2.0 频率‡,3.80 GHz,3.90 GHz,3.90 GHz
+处理器基本频率,2.30 GHz,1.60 GHz,1.40 GHz
+缓存,6 MB Intel® Smart Cache,6 MB Intel® Smart Cache,6 MB Intel® Smart Cache
+总线速度,4 GT/s,4 GT/s,4 GT/s
+TDP,28 W,15 W,15 W
+可配置的 TDP-down 频率,1.10 GHz,800 MHz,
+可配置的 TDP-down,20 W,10 W,
+Configurable TDP-up Frequency,,1.80 GHz,
+Configurable TDP-up,,25 W,
+
+补充信息
+状态,Discontinued,Discontinued,Discontinued
+发行日期,Q2'18,Q3'18,Q3'19
+提供嵌入式方案,否,否,否
+数据表,立即查看,立即查看,立即查看
+
+内存规格
+最大内存大小（取决于内存类型）,32 GB,64 GB,32 GB
+内存类型,DDR4-2400 |  LPDDR3-2133,DDR4-2400 |  LPDDR3-2133,DDR4-2400 |  LPDDR3-2133
+最大内存通道数,2,2,2
+最大内存带宽,37.5 GB/s,37.5 GB/s,37.5 GB/s
+支持的 ECC 内存 ‡,否,否,否
+
+GPU Specifications
+处理器显卡 ‡,英特尔锐炬® Plus 品牌 655,适用于第 8 代英特尔® 处理器的英特尔® 超核芯显卡,英特尔锐炬® Plus 品牌 645
+显卡基本频率,300 MHz,300 MHz,300 MHz
+显卡最大动态频率,1.05 GHz,1.10 GHz,1.05 GHz
+显卡视频最大内存,32 GB,32 GB,32 GB
+eDRAM,128 MB,,128 MB
+图形输出,eDP/DP/HDMI/DVI,eDP/DP/HDMI/DVI,eDP/DP/HDMI/DVI
+4K 支持,Yes |  at 60Hz,Yes |  at 60Hz,Yes |  at 60Hz
+最大分辨率 (HDMI)‡,4096x2304@30Hz,4096x2304@24Hz,4096x2304@30Hz
+最大分辨率 (DP)‡,4096x2304@60Hz,4096x2304@60Hz,4096x2304@60Hz
+最大分辨率（eDP - 集成平板）‡,4096x2304@60Hz,4096x2304@60Hz,4096x2304@60Hz
+DirectX* 支持,12,12,12
+OpenGL* 支持,4.5,4.5,4.5
+英特尔® Quick Sync Video,是,是,是
+英特尔 InTru 3D 技术,是,,是
+英特尔® 清晰视频核芯技术,是,是,是
+英特尔® 清晰视频技术,是,是,是
+支持的显示器数量 ‡,3,3,3
+设备 ID,0x3EA5,3EA0 |  3EA1,0x3EA6
+
+扩展选项
+PCI Express 修订版,3.0,3.0,3.0
+PCI Express 配置 ‡,1x4 |  2x2 |  1x2+2x1 and 4x1,1x4 |  2x2 |  1x2+2x1 and 4x1,1x4 |  2x2 |  1x2+2x1 and 4x1
+PCI Express 通道数的最大值,16,16,16
+
+封装规格
+支持的插槽,FCBGA1528,FCBGA1528,FCBGA1528
+最大 CPU 配置,1,1,1
+TJUNCTION,100°C,100°C,100°C
+封装大小,46x24,46x24,46x24
+
+先进技术
+支持英特尔® 傲腾™ 内存 ‡,是,是,是
+英特尔® Speed Shift Technology,是,是,是
+英特尔® 睿频加速技术 ‡,2.0,2.0,2.0
+英特尔® 超线程技术 ‡,是,是,是
+英特尔® Transactional Synchronization Extensions – New Instructions (英特尔® TSX-NI),否,否,否
+英特尔® 64 ‡,是,是,是
+指令集,64-bit,64-bit,64-bit
+指令集扩展,Intel® SSE4.1 |  Intel® SSE4.2 |  Intel® AVX2,Intel® SSE4.1 |  Intel® SSE4.2 |  Intel® AVX2,Intel® SSE4.1 |  Intel® SSE4.2 |  Intel® AVX2
+英特尔® My WiFi 技术,是,是,是
+空闲状态,是,是,是
+Enhanced Intel SpeedStep® Technology,是,是,是
+温度监视技术,是,是,是
+英特尔® Flex Memory Access,是,是,是
+英特尔® 身份保护技术 ‡,是,是,是
+Intel® Deep Learning Boost (Intel® DL Boost),,否,
+Intel® Smart Response Technology,,是,
+
+安全性与可靠性
+英特尔® AES 新指令,是,是,是
+安全密钥,是,是,是
+英特尔® Software Guard Extensions,Yes with Intel® ME,Yes with Intel® ME,Yes with Intel® ME
+英特尔® 内存保护扩展,是,,是
+英特尔® 操作系统守护,是,是,是
+英特尔® Trusted Execution Technology ‡,否,否,否
+执行禁用位 ‡,是,是,是
+英特尔® 稳定映像平台计划,否,否,否
+英特尔® 虚拟化技术 (VT-x) ‡,是,是,是
+英特尔® Virtualization Technology for Directed I/O (VT-d) ‡,是,是,是
+英特尔® VT-x with Extended Page Tables (EPT) ‡,是,是,是
+Intel® Boot Guard,,是,

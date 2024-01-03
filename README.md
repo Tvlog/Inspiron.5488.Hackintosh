@@ -35,7 +35,7 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 | Storage 1        | NVMe 1TB SSD       |:white_check_mark: | 
 | Storage 2        | SATA 2TB SSD       |:white_check_mark: | 
 | TF Card reader | Realtek USB Card Reader, 0BDA:0177 |:white_check_mark: | 
-|屏幕|Generic PnP Monitor [NoDB],BOE0806|:white_check_mark: | 
+|屏幕|Generic PnP Monitor [NoDB],[BOE0806](https://github.com/bsdhw/EDID)|:white_check_mark: | 
 |分辨率|LCD Monitor 13.9-inch 309x173mm 16:9,1920x1080 pixel 157.35 PPI|:white_check_mark: | 
 |摄像头|Integrated_Webcam_HD UVC Camera|:white_check_mark: | 
 |触控板|I2C HID ACPI\VEN_DELL&DEV_089C|:white_check_mark: | 

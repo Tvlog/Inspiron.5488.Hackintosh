@@ -9,7 +9,7 @@
 
 序章：苹果在今年WWDC 2023展上，推出了搭载 M2 Ultra 芯片的 Mac Pro，正式完成了从 Intel 到 Apple Silicon 的过渡。
 
-结局：2023年6月Apple已经完成了从 Intel 到 Apple Silicon 的过渡。黑苹果的环境只会越来越差，这个repository被放弃了也即将到来，未来几乎不会有任何更新。你可以fork并修改它，我将不再更新和维护它，但是我想以此来作为黑苹果目录结构最完善的说明文件。
+结局：2023年6月Apple已经完成了从 Intel 到 Apple Silicon 的过渡。黑苹果的环境只会越来越差，这个repository被放弃也即将到来，未来几乎不会有任何更新。你可以fork并修改它，我将不再更新和维护它，但是我想以此来作为黑苹果目录结构最棒🎉的说明文件。
 
 # Dell-Inspiron-14-5488 Opencore EFI Hackintosh
  
@@ -25,31 +25,32 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 |  规格             |         Feature                 |           Status                     |
 |---------------------|---------------------------------|--------------------------------------|
 | 电脑型号 | DELL-inspiron-5488             |:computer:| 
-| CPU              | Intel® Core™ i5-8265U Processor|:white_check_mark: | 
-| iGPU             | Intel® UHD Graphics 620            |:white_check_mark: | 
+| CPU              | Intel® Core™ i5-8265U CPU @1.60GHz,1800MHz|:white_check_mark: | 
+| iGPU             | Intel® UHD Graphics 620 |:white_check_mark: | 
 | dGPU | NVIDIA GeForce MX250 ID:1D13  |:x: | 
-| Audio            | Realtek ALC236&ALC3204        |:white_check_mark: | 
+| Audio + MIC      | Realtek ALC236&ALC3204 |:white_check_mark: | 
 | RAM              | 2x8 GB DDR4 2666 MHz(实际运行2400MHz)                |:white_check_mark: | 
-| network | Realtek PCIe Ethernet Controller Driver  |:white_check_mark: | 
-| WiFi + Bluetooth | Wifi6 AX200 Bluetooth 5.1  |:white_check_mark: | 
-| Storage 1           | NVMe 512GB SSD       |:white_check_mark: | 
-| Storage 2           | SATA 2TB SSD       |:white_check_mark: | 
-| TF Card reader | Realtek PCI-E Card Reader, 152D:1237 |:white_check_mark: | 
-|屏幕|BOE CQ NV105WAM-N31, BOE088B|:white_check_mark: | 
-|分辨率|14 inch 16:9, 1920 x 1080 pixel 220 PPI, 10-Point Capacitive|:white_check_mark: | 
+| Network | Realtek RTL8107E PCI Express Fast Ethernet |:white_check_mark: | 
+| WiFi + Bluetooth | WiFi6 AX200 Bluetooth 5.1  |:white_check_mark: | 
+| Storage 1        | NVMe 1TB SSD       |:white_check_mark: | 
+| Storage 2        | SATA 2TB SSD       |:white_check_mark: | 
+| TF Card reader | Realtek USB Card Reader, 0BDA:0177 |:white_check_mark: | 
+|屏幕|Generic PnP Monitor [NoDB],BOE0806|:white_check_mark: | 
+|分辨率|LCD Monitor 13.9-inch 309x173mm 16:9,1920x1080 pixel 157.35 PPI|:white_check_mark: | 
 |摄像头|Integrated_Webcam_HD UVC Camera|:white_check_mark: | 
-|触控板|Microsoft type cover|:white_check_mark: | 
-|电池|26.81Wh 7.66v 41000mAh|:white_check_mark: | 
+|触控板|I2C HID ACPI\VEN_DELL&DEV_089C|:white_check_mark: | 
+|电池|DELL VM73283 42Wh 11.4V 41998mWh 3-cell lithium ion|:white_check_mark: | 
 |指纹| Goodix Fingerprint Sensor Driver |:x: | 
-|其他设备(若有)|触摸屏,NFC,LTE,GPS,Accelerometers,light sensors,compass|:white_check_mark: | 
+|其他设备(若有)|触摸屏,NFC,LTE,GPS,Accelerometers,light sensors,compass|:sparkle: | 
 
 |  Status             |         Feature                 |            Note                      |
 |---------------------|---------------------------------|--------------------------------------|
-|  :white_check_mark: |  Graphic Acceleration          |  QE/CI works |
-|  :white_check_mark: |  WiFi & Bluetooth              |  With [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm) |
-|  :white_check_mark: |  Audio                         |  With AppleALC   |
+|  :white_check_mark: |  Graphic Acceleration        |  QE/CI works |
+|  :white_check_mark: |  WiFi & Bluetooth            |  With [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm) |
+|  :white_check_mark: |  Audio                       |  With AppleALC   |
 |  :white_check_mark: |  USB                         |  With USBToolBox   |
-|                     |                                |                   |
+|  :white_check_mark: |  Network                     |  With [RealtekRTL8100](https://github.com/Mieze/RealtekRTL8100)  |
+|                     |                              |                   |
 |  :heavy_exclamation_mark: |  dGPU        |无法驱动，通过SSDT屏蔽| 
 |  :heavy_exclamation_mark: |  指纹        |无法驱动，未屏蔽，可通过定制USB屏蔽| 
 
@@ -57,11 +58,11 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 ### BIOS设置
 ||||
 --|-------------------------------------------|-----------
-1 |General \ Boot Sequence-Boot List Option |  [UEFI]
-2 |System Configuration \ SATA Operation       |  [AHCI]
-3 |Secure Boot \ Secure Boot Enable            | [Disabled]
+1 |General \ Boot Sequence-Boot List Option   |  [UEFI]
+2 |System Configuration \ SATA Operation      |  [AHCI]
+3 |Secure Boot \ Secure Boot Enable           | [Disabled]
 4 |Virtualization Support \ Virtualization    |  [Enable]
-5 |Security Device Support                    | [Enabled] （Win11 - TPM 2.0）
+5 |Security Device Support                    | [Enabled] (Win11 - TPM 2.0)
 6 |SupportAssist System Resolution \ Auto OSRecovery Threshold | [Disabled]
 
 **Options modified**
@@ -89,9 +90,9 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 1⃣️ Sleep Wake Failure in EFI：SMBIOS需自行更新，CPUFriendProvider数据需根据个人情况自行生成[CPUFriendFriend](https://github.com/corpnewt/CPUFriendFriend)
 [i58265u](https://ark.intel.com/content/www/cn/zh/ark/products/149088/intel-core-i58265u-processor-6m-cache-up-to-3-90-ghz.html)
 
-&emsp;&emsp;若仍未解决问题，则：请使用命令或者 Hackintool 修复休眠模式 hibernatemode 和 proximitywake.   
-如果唤醒弹窗 “电脑关机是因为发生了问题” , 请前往 “控制台” 删除 “诊断报告” 中所有日志. （主要是 “Sleep Wake Failure” 相关的）  
-另外BIOS 可开启 “PCIE设备唤醒” 和 “网络唤醒”, 将支持键鼠唤醒. （不要开启 USB Standby Power at S4/S5）  
+&emsp;&emsp;若仍未解决问题，则：请使用命令或者 Hackintool 修复休眠模式 hibernatemode 和 proximitywake.
+如果唤醒弹窗 “电脑关机是因为发生了问题”,请前往 “控制台” 删除 “诊断报告” 中所有日志.（主要是 “Sleep Wake Failure” 相关的）
+另外BIOS可开启 “PCIE设备唤醒” 和 “网络唤醒”, 将支持键鼠唤醒.（不要开启 USB Standby Power at S4/S5）
 	
     设置 hibernatemode 和 proximitywake：
 ```
@@ -222,16 +223,16 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 
 &emsp;&ensp;在 Windows PC 专用键盘上，请用 Alt 键代替 Option 键，用 Ctrl 键或 Windows 标志键代替 Command 键。
 
-Mac 菜单和键盘通常会使用符号来表示某些按键，其中包括以下修饰键：
+&emsp;&ensp;Mac 菜单和键盘通常会使用符号来表示某些按键，其中包括以下修饰键：
 
 | Mac     | Windows                                     |
-| -------- | ---------------------------------------- |
-| Command（或 Cmd）⌘ |Windows 标志键|
+| -------- | :----------------------------------------: |
+| Command（或 Cmd）⌘ |Windows标志键|
 | Shift ⇧   |一致|
 | Option ⌥   |Alt|
 |Control ⌃|Ctrl|
 |Caps Lock ⇪|一致|
-|Fn![mac-fn-key-globe-icon](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/237ae87e-bd12-4d3d-abd3-455bb242e497)|一致|
+|Fn&nbsp;<img src="https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/237ae87e-bd12-4d3d-abd3-455bb242e497" alt="" width="18">|一致|
 
 
 ## 成果展示🏅️

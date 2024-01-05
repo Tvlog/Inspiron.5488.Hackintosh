@@ -227,7 +227,7 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 
 | Mac     | Windows                                     |
 | -------- | :----------------------------------------: |
-| Command（或 Cmd）⌘ |![Windows 徽标键](https://img.shields.io/badge/Windows%20%E5%BE%BD%E6%A0%87%E9%94%AE-FFFFFF?logo=windows&logoColor=696969)|
+| Command（或 Cmd）⌘ |![Windows徽标键](https://img.shields.io/badge/Windows%20%E5%BE%BD%E6%A0%87%E9%94%AE-FFFFFF?logo=windows&logoColor=696969)|
 | Shift ⇧  |一致  |
 | Option ⌥ |Alt  |
 |Control ⌃ |Ctrl |

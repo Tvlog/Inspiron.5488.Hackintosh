@@ -30,7 +30,7 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 | dGPU | NVIDIA GeForce MX250 ID:1D13  |:x: | 
 | Audio + MIC      | Realtek ALC236&ALC3204 |:white_check_mark: | 
 | RAM              | 2x8 GB DDR4 2666 MHz(实际运行2400MHz)                |:white_check_mark: | 
-| Network | Realtek RTL8107E PCI Express Fast Ethernet |:white_check_mark: | 
+| Ethernet | Realtek RTL8107E PCI Express Fast Ethernet |:white_check_mark: | 
 | WiFi + Bluetooth | WiFi6 AX200 Bluetooth 5.1  |:white_check_mark: | 
 | Storage 1        | NVMe 1TB SSD       |:white_check_mark: | 
 | Storage 2        | SATA 2TB SSD       |:white_check_mark: | 
@@ -49,7 +49,7 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 |  :white_check_mark: |  WiFi & Bluetooth            |  With [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm) |
 |  :white_check_mark: |  Audio                       |  With AppleALC   |
 |  :white_check_mark: |  USB                         |  With USBToolBox   |
-|  :white_check_mark: |  Network                     |  With [RealtekRTL8100](https://github.com/Mieze/RealtekRTL8100)  |
+|  :white_check_mark: |  Ethernet                    |  With [RealtekRTL8100](https://github.com/Mieze/RealtekRTL8100)  |
 |                     |                              |                   |
 |  :heavy_exclamation_mark: |  dGPU        |无法驱动，通过SSDT屏蔽| 
 |  :heavy_exclamation_mark: |  指纹        |无法驱动，未屏蔽，可通过定制USB屏蔽| 
@@ -71,15 +71,15 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 |1| Virtualization Support \ VT for Direct I/O | Enable | Disable |
 |2| Intel SGE \ Intel SGX Enable | Enable | Disable |
 
-> 第二个Table打开与关闭均可,可根据个人情况灵活调整 1⃣建议保持打开,config.plist已做设置 2⃣若不使用Windows指纹功能可以关闭
+> 第二个Table打开与关闭均可,可根据个人情况灵活调整 ①建议保持打开,config.plist已做设置 ②若不使用Windows指纹功能可以关闭
 
 
 ### 已知故障
 可以解决的
-- [x] 已解决。耳麦无法使用。需定制AppleALC解决,过程较为复杂,暂时搁浅
-- [x] 进行中。极低概率仍会出现Sleep Wake Failure in EFI,后重启，二分法尝试解决中,代固化⌛️
-- [ ] 未解决。开机时间一长，iCloud上传下载不可用,任何操作均会进入等待队列🚫,注销后进入恢复正常。无解决头绪，用注销缓释,可能更换系统版本可以解决
-- [ ] 未解决。Sonoma14.0,14.1,14.2查找Mac，iMessage，FaceTime认证过程出现错误。可能网卡内建，Inter Wi-Fi正式版更新可能解决，弃坑Sonoma感觉不太适合Hackintosh
+- [x] 已解决。耳麦无法使用,需定制AppleALC解决,过程较为复杂,暂时搁浅
+- [x] 进行中。极低概率仍会出现Sleep Wake Failure in EFI,后重启,二分法尝试解决中,代固化⌛️
+- [ ] 未解决。开机时间一长,iCloud上传下载不可用,任何操作均会进入等待队列🚫,注销后进入恢复正常。无解决头绪,用注销缓释,可能更换系统版本可以解决
+- [ ] 未解决。Sonoma14.0,14.1,14.2查找Mac&iMessage&FaceTime认证过程出现错误。可能网卡内建,Inter Wi-Fi正式版更新可能解决,弃坑Sonoma感觉不太适合Hackintosh
 
 不能解决的
 - [ ] 英特尔网卡蓝牙模块无法按预期睡眠。睡眠后蓝牙崩溃或连接丢失，Bluetoothd占用大量CPU资源，风扇狂转。浅度睡眠低概率复发，深度睡眠百分百复发。建议关闭蓝牙以解决
@@ -227,11 +227,11 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 
 | Mac     | Windows                                     |
 | -------- | :----------------------------------------: |
-| Command（或 Cmd）⌘ |Windows标志键|
-| Shift ⇧   |一致|
-| Option ⌥   |Alt|
-|Control ⌃|Ctrl|
-|Caps Lock ⇪|一致|
+| Command（或 Cmd）⌘ |![Windows徽标键](https://img.shields.io/badge/Windows%E5%BE%BD%E6%A0%87%E9%94%AE-FFFAFA?logo=windows&logoColor=696969)|
+| Shift ⇧  |一致  |
+| Option ⌥ |Alt  |
+|Control ⌃ |Ctrl |
+|Caps Lock ⇪|一致 |
 |Fn&nbsp;<img src="https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/237ae87e-bd12-4d3d-abd3-455bb242e497" alt="" width="18">|一致|
 
 

@@ -22,26 +22,27 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 
 ### 电脑配置与驱动情况
 
-|  规格             |         Feature                 |           Status                     |
-|---------------------|---------------------------------|--------------------------------------|
-| 电脑型号 | DELL-inspiron-5488             |:computer:| 
-| CPU              | Intel® Core™ i5-8265U CPU @1.60GHz,1800MHz|:white_check_mark: | 
-| iGPU             | Intel® UHD Graphics 620 |:white_check_mark: | 
-| dGPU | NVIDIA GeForce MX250 ID:1D13  |:x: | 
-| Audio + MIC      | Realtek ALC236&ALC3204 |:white_check_mark: | 
-| RAM              | 2x8 GB DDR4 2666 MHz(实际运行2400MHz)                |:white_check_mark: | 
-| Ethernet | Realtek RTL8107E PCI Express Fast Ethernet |:white_check_mark: | 
-| WiFi + Bluetooth | WiFi6 AX200 Bluetooth 5.1  |:white_check_mark: | 
-| Storage 1        | NVMe 1TB SSD       |:white_check_mark: | 
-| Storage 2        | SATA 2TB SSD       |:white_check_mark: | 
-| TF Card reader | Realtek USB Card Reader, 0BDA:0177 |:white_check_mark: | 
-|屏幕|Generic PnP Monitor [NoDB],[BOE0806](https://github.com/bsdhw/EDID)|:white_check_mark: | 
-|分辨率|LCD Monitor 13.9-inch 309x173mm 16:9,1920x1080 pixel 157.35 PPI|:white_check_mark: | 
-|摄像头|Integrated_Webcam_HD UVC Camera|:white_check_mark: | 
-|触控板|I2C HID ACPI\VEN_DELL&DEV_089C|:white_check_mark: | 
-|电池|DELL VM73283 42Wh 11.4V 41998mWh 3-cell lithium ion|:white_check_mark: | 
-|指纹| Goodix Fingerprint Sensor Driver |:x: | 
-|其他设备(若有)|触摸屏,NFC,LTE,GPS,Accelerometers,light sensors,compass|:sparkle: | 
+|  Type            |        Device              | BUS |           Status                     |
+|:----------------:|----------------------------|:-----:|:----------------------------------:|
+| Model | DELL-inspiron-5488             |Board|:computer:| 
+| CPU              | Intel® Core™ i5-8265U CPU @1.60GHz,1800MHz|SYS|:white_check_mark: | 
+| iGPU             | Intel® WhiskeyLake-U GT2 [UHD Graphics 620] |PCI|:white_check_mark: | 
+| dGPU | NVIDIA GeForce MX250 ID:1D13  |PCI|:x: | 
+| Audio + MIC      | Realtek ALC236&ALC3204 |PCI|:white_check_mark: | 
+| RAM              | 2x8 GB DDR4 2666 MHz(实际运行2400MHz)               |SYS|:white_check_mark: | 
+| Ethernet | Realtek RTL810xE PCI Express Fast Ethernet controller |PCI|:white_check_mark: | 
+| WiFi<br>Bluetooth | WiFi6 AX200 Bluetooth 5.1 |PCI<br>USB|:white_check_mark: | 
+| Storage 1        | NVMe 1TB SSD     |PCI|:white_check_mark: | 
+| Storage 2        | SATA 2TB SSD     |IDE|:white_check_mark: | 
+| USB | Intel Cannon Point-LP USB 3.1 xHCI Controller |PCI|:white_check_mark: |
+| TF Card reader | Realtek USB Card Reader, 0BDA:0177 |USB|:white_check_mark: |
+|Monitor|LCD Monitor 13.9-inch 309x173mm 16:9,1920x1080 157.35 PPI|EISA|:white_check_mark: | 
+|屏幕|Generic PnP Monitor [NoDB],[BOE0806](https://github.com/bsdhw/EDID)|EISA|:white_check_mark: | 
+|摄像头|Integrated_Webcam_HD UVC Camera|USB|:white_check_mark: | 
+|触控板|I2C HID ACPI\VEN_DELL&DEV_089C|PCI|:white_check_mark: | 
+|Battery|DELL VM73283 42Wh 11.4V 41998mWh 3-cell lithium ion|SYS|:white_check_mark: | 
+|Fingerprint| Goodix Fingerprint Reader |USB|:x: | 
+|其他设备(若有)|触摸屏,NFC,LTE,GPS,Accelerometers,light sensors,compass|-|:sparkle: | 
 
 |  Status             |         Feature                 |            Note                      |
 |---------------------|---------------------------------|--------------------------------------|
@@ -53,6 +54,8 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 |                     |                              |                   |
 |  :heavy_exclamation_mark: |  dGPU        |无法驱动，通过SSDT屏蔽| 
 |  :heavy_exclamation_mark: |  指纹        |无法驱动，未屏蔽，可通过定制USB屏蔽| 
+
+> [Year:2019 Type:notebook HWid:420D5 Vendor:Dell Model:Inspiron 5488](https://linux-hardware.org/?probe=1e82deb58e)
 
 
 ### BIOS设置

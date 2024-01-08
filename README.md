@@ -31,7 +31,7 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 | Audio + MIC      | Realtek ALC236&ALC3204 |PCI|:white_check_mark: | 
 | RAM              | 2x8 GB DDR4 2666 MHz(实际运行2400MHz)               |SYS|:white_check_mark: | 
 | Ethernet | Realtek RTL810xE PCI Express Fast Ethernet controller |PCI|:white_check_mark: | 
-| WiFi<br>Bluetooth | WiFi6 AX200 Bluetooth 5.1 |PCI<br>USB|:white_check_mark: | 
+| WiFi<br>Bluetooth | WiFi6 AX200 Bluetooth 5.2 |PCI<br>USB|:white_check_mark: | 
 | Storage 1        | NVMe 1TB SSD     |PCI|:white_check_mark: | 
 | Storage 2        | SATA 2TB SSD     |IDE|:white_check_mark: | 
 | USB | Intel Cannon Point-LP USB 3.1 xHCI Controller |PCI|:white_check_mark: |

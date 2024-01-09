@@ -77,6 +77,43 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 > 第二个Table打开与关闭均可,可根据个人情况灵活调整 ①建议保持打开,config.plist已做设置 ②若不使用Windows指纹功能可以关闭
 
 
+### 目录树
+```
+.
+├── EFI
+│   ├── BOOT
+│   │   └── BOOTx64.efi
+│   └── OC
+│       ├── ACPI
+│       │   ├── SSDT-AWAC.aml
+│       │   ├── SSDT-EC-USBX-DESKTOP.aml
+│       │   ├── SSDT-PLUG.aml
+│       │   └── SSDT-RX 5500 XT.aml
+│       ├── Bootstrap
+│       │   └── Bootstrap.efi
+│       ├── Drivers
+│       │   ├── HfsPlus.efi
+│       │   └── OpenRuntime.efi
+│       ├── Kexts
+│       │   ├── AppleALC.kext
+│       │   ├── Lilu.kext
+│       │   ├── LucyRTL8125Ethernet.kext
+│       │   ├── NVMeFix.kext
+│       │   ├── SMCProcessor.kext
+│       │   ├── SMCSuperIO.kext
+│       │   ├── USBPorts.kext
+│       │   ├── VirtualSMC.kext
+│       │   ├── WhateverGreen.kext
+│       │   ├── XHCI-unsupported.kext
+│       │   └── dAGPM.kext
+│       ├── OpenCore.efi
+│       ├── Tools
+│       │   └── OpenShell.efi
+│       └── config.plist
+└── README.md
+```
+
+
 ### 已知故障
 可以解决的
 - [x] 已解决。耳麦无法使用,需定制AppleALC解决,过程较为复杂,暂时搁浅

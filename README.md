@@ -276,10 +276,19 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 
 
 ## 成果展示🏅️
+![系统概览](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/b4530047-9f96-4504-9163-e59658266fb0)
+![GPU负载](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/007ea0a4-b67f-47a7-8d90-9d436a03ef91)
+![CPU Fan](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/366754b9-0ac6-4b89-b3be-8249d3ef073d)
+![所有温度传感器](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/58a42a18-c9d2-4eea-a274-d01e84c57c30)
+![电池详细信息](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/2aa0d05b-5f73-4c2d-a067-81ea02ce9042)
+![内置显示屏](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/57ad739d-d327-4639-b96a-b41084a1ec8c)
 ![CPU变频档位正常](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/a7edf221-861b-4c6c-8d49-506df940bb93)
+
+### 部分序列号展示
 ![SMBIOS](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/1c22563b-a13b-4884-9ba9-b7f3382a7a5d)
 ![SMBIOS·2018·15 2](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/e79b3d9c-4278-4df9-8f9f-dafbd7db2eaa)
 ![SMBIOS1·2019·15 4](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/62d9dcf1-8d31-4c8d-9cfd-a2fbb267ddfe)
+
 
 ## 部分定制教程
 ### AppleALC定制过程
@@ -287,3 +296,5 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 ![修改节点](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/82b8f6f1-de3d-4f0c-8994-a315a2e828e2)
 ![编译AppleALC(MacKernelSDK与Liu)](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/33e8b2f1-a677-46a2-88e8-5542a7e33709)
 ![编译成功Archive](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/55b579e2-87fc-4dce-89d2-32682babf194)
+
+### RTC诊断屏蔽过程

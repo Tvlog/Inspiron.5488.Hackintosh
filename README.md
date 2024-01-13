@@ -298,5 +298,4 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 ![编译成功Archive](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/55b579e2-87fc-4dce-89d2-32682babf194)
 
 ### RTC诊断屏蔽过程
-![RTC错位点位，最终锁定B7](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/8bb38294-238f-4481-b6be-e8bedd6a1d1f)
-
+![RTC错位点位，最终锁定B7](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/17f6b82b-197c-4dbc-bd45-25f611e18736)

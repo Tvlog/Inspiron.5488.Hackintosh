@@ -117,7 +117,7 @@ Dell-inspiron-14-5488 的黑苹果 EFI
 ### 已知故障
 可以解决的
 - [x] 已解决。耳麦无法使用,需定制AppleALC解决,过程较为复杂,暂时搁浅
-- [x] 进行中。极低概率仍会出现Sleep Wake Failure in EFI,后重启,二分法尝试解决中,代固化⌛️
+- [x] 已解决。极低概率仍会出现Sleep Wake Failure in EFI,后重启,锁定为RTC问题,二分法解决,固化成功
 - [ ] 未解决。开机时间一长,iCloud上传下载不可用,任何操作均会进入等待队列🚫,注销后进入恢复正常。无解决头绪,用注销缓释,可能更换系统版本可以解决
 - [ ] 未解决。Sonoma14.0,14.1,14.2查找Mac&iMessage&FaceTime认证过程出现错误。可能网卡内建,Inter Wi-Fi正式版更新可能解决,弃坑Sonoma感觉不太适合Hackintosh
 
@@ -284,13 +284,13 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 ![内置显示屏](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/57ad739d-d327-4639-b96a-b41084a1ec8c)
 ![CPU变频档位正常](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/a7edf221-861b-4c6c-8d49-506df940bb93)
 
-### 部分序列号展示
+### 序列号展示
 ![SMBIOS](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/1c22563b-a13b-4884-9ba9-b7f3382a7a5d)
 ![SMBIOS·2018·15 2](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/e79b3d9c-4278-4df9-8f9f-dafbd7db2eaa)
 ![SMBIOS1·2019·15 4](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/62d9dcf1-8d31-4c8d-9cfd-a2fbb267ddfe)
 
 
-## 部分定制教程
+## 定制教程
 ### AppleALC定制过程
 ![Ubuntu环境下提取codec](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/3ac97c79-7e66-4879-bea5-9f9eb0f1d518)
 ![修改节点](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/82b8f6f1-de3d-4f0c-8994-a315a2e828e2)
@@ -298,3 +298,5 @@ igfx: @ (DBG) BLS: [COMM] Processing the request: Current = 0x00014ead; Target =
 ![编译成功Archive](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/55b579e2-87fc-4dce-89d2-32682babf194)
 
 ### RTC诊断屏蔽过程
+![RTC错位点位，最终锁定B7](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/8bb38294-238f-4481-b6be-e8bedd6a1d1f)
+

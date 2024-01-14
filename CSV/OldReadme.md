@@ -201,17 +201,17 @@ Mac 菜单和键盘通常会使用符号来表示某些按键，其中包括以�
 | Option ⌥   |Alt|
 |Control ⌃|Ctrl|
 |Caps Lock ⇪|一致|
-|Fn ![mac-fn-key-globe-icon](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/assets/141799395/2142eee3-6476-4a5a-92d1-1d83eafbc690)|一致|
+|Fn&nbsp;<img src="https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/237ae87e-bd12-4d3d-abd3-455bb242e497" alt="" width="18">|一致|
 
-![键盘图示](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/assets/141799395/db345528-ce4e-4dbc-b4a0-47263b6ae460)
+![键盘图示](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/fc784bd0-ed48-420c-801e-45dc878be423)
 
 
 # 效果展示
-![变频功能正常](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/848bccf963b707018c5412e96fc13a50c47eeb52/Picture/cpufriend.png)
+![变频功能正常](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/a7edf221-861b-4c6c-8d49-506df940bb93)
 
 
 # AppleALC定制过程
-![Ubuntu环境下提取codec0](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/2023-11-24%2006-19-06%E6%8F%90%E5%8F%96codec.png)
-![修改对应节点信息](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/%E4%BF%AE%E6%94%B9%E8%8A%82%E7%82%B9.png)
-![修改完成的四份文件编译AppleALC](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/%E7%BC%96%E8%AF%91AppleALC(MacKernelSDK%E4%B8%8ELiu).png)
-![成品AppleALC](https://github.com/Tvlog/Dell.5488.OC.Hackintosh/blob/9a01227c5fc728b38510e190970939380083c1ec/Picture/Archive.png)
+![Ubuntu环境下提取codec](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/3ac97c79-7e66-4879-bea5-9f9eb0f1d518)
+![修改对应节点信息](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/82b8f6f1-de3d-4f0c-8994-a315a2e828e2)
+![修改完成的四份文件编译AppleALC](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/33e8b2f1-a677-46a2-88e8-5542a7e33709)
+![成品AppleALC](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/55b579e2-87fc-4dce-89d2-32682babf194)

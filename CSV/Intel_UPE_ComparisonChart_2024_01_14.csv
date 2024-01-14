@@ -1,0 +1,35 @@
+﻿英特尔® 产品规格对比
+2024/01/14 16:27:42
+ ,Intel® Wireless-AC 9462 ,Intel® Wireless-AC 9560 ,Intel® Wi-Fi 6 AX200 (Gig+) 
+基本要素
+产品集,英特尔® 无线 9000 系列,英特尔® 无线 9000 系列,英特尔® Wi-Fi 6 系列
+状态,Launched,Launched,Launched
+发行日期,Q4'17,Q4'17,Q2'19
+重量（克）,2.7,2.8,2.83
+操作温度范围,0°C to 80°C,0°C to 80°C,0°C to 80°C
+运行温度（最高）,80 °C,80 °C,80 °C
+运行温度（最低）,0 °C,0 °C,0 °C
+支持的操作系统,Windows 11 |  64-bit* |  Windows 10 |  64-bit* |  Linux*,Windows 11 |  64-bit* |  Windows 10 |  64-bit* |  Linux* |  Chrome OS*,Windows 11 |  64-bit* |  Windows 10 |  64-bit* |  Linux*
+天线,1x1,2x2,2x2
+
+补充信息
+产品简介,立即查看,立即查看,立即查看
+
+网络规格
+TX/RX 流,1x1 (Diversity),2x2,2x2
+频带,2.4 |  5 GHz,2.4 |  5 GHz (160 MHz),2.4 |  5 GHz (160MHz)
+最高速度,433 Mbps,1.73 Gbps,2.4 Gbps
+Wi-Fi CERTIFIED*,Wi-Fi 5 (802.11ac),Wi-Fi 5 (802.11ac),Wi-Fi 6 (802.11ax)
+兼容性,FIPS |  FISMA,FIPS |  FISMA,FIPS |  FISMA
+集成蓝牙,是,是,是
+蓝牙版本,5.1,5.1,5.2
+
+封装规格
+主板板型,M.2 2230 |  M.2 1216,M.2 2230 |  M.2 1216,M.2 2230 |  M.2 1216
+封装大小,22mm x 30mm x 2.4mm |  12mm x 16mm x 1.57mm,22mm x 30mm x 2.4mm |  12mm x 16mm x 1.57mm,22mm x 30mm x 2.4mm |  12mm x 16mm x 1.65mm
+系统接口类型,M.2: CNVio,M.2: CNVio,Wi-Fi(PCIe) |  BT(USB)
+
+先进技术
+MU-MIMO,是,是,是
+在英特尔® 博锐™ 技术下受支持,否,是,是
+Orthogonal Frequency-Division Multiple Access (OFDMA),,,是

@@ -13,27 +13,6 @@ framebuffer-unifiedmem：设置核显能调用的显存大小（实际使用的�
 第二：白苹果核显的显存默认也是1536MB，显存没单独去打补丁了
 
 
-Intel BIOS 设置
-注意:大多数选项可能不会出现在你的固件中，我们建议尽可能匹配，但如果这些选项在你的BIOS中不可用，不要太担心
-
-#禁用
-快速启动（Fast Boot）
-安全引导（Secure Boot）
-串口/COM端口（Serial/COM Port）
-并口（Parallel Port）
-VT-d (如果将DisableIoMapper设置为YES，则可以启用)
-兼容性支持模块(CSM)(在大多数情况下必须关闭，当该选项启用时，像gIO这样的GPU错误/停顿很常见)
-雷电 Thunderbolt(用于初始安装，因为如果安装不正确，Thunderbolt可能会导致问题)
-Intel SGX
-Intel Platform Trust
-CFG Lock (MSR 0xE2写保护)(必须关闭，如果你找不到选项，那么在Kernel -> Quirks下启用AppleXcpmCfgLock。你的hack将无法在启用CFG-Lock的情况下启动)
-
-#启用
-VT-x
-4G以上解码
-超线程
-执行禁止位
-EHCI/XHCI Hand-off
-操作系统类型:Windows 8.1/10 UEFI模式(一些主板可能需要”其他操作系统”代替)
-DVMT预分配(iGPU内存):64MB或以上
-SATA 模式: AHCI
+## [Inter BIOS 设置](https://sumingyd.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#intel-bios-%E8%AE%BE%E7%BD%AE)
+![启用](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/52a07f8f-29c9-48bd-b59c-31e27d60c2c9)
+![禁用](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/3c9db266-a0e8-464d-825e-6a43e5ce5bbf)

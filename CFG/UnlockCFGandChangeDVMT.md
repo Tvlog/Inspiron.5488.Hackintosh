@@ -1,3 +1,5 @@
+感谢🙏[daggeryu](https://github.com/daggeryu)
+
 **DELL5488**解锁**CFG** & 修改DVMT（本仓库标题其他机型一样适用）
 
 1：将shell文件夹丢到efi里面，开机进bios，添加启动项efi/shell/bootx64.efi

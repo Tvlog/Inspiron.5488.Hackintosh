@@ -18,3 +18,8 @@ framebuffer-unifiedmem：设置核显能调用的显存大小（实际使用的�
 ## [Inter BIOS 设置](https://sumingyd.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#intel-bios-%E8%AE%BE%E7%BD%AE)
 ![启用](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/52a07f8f-29c9-48bd-b59c-31e27d60c2c9)
 ![禁用](https://github.com/Tvlog/Inspiron.5488.Hackintosh/assets/141799395/3c9db266-a0e8-464d-825e-6a43e5ce5bbf)
+
+
+IntelBluetoothFirmware.kext：固件驱动，上传固件驱动并让Intel蓝牙硬件进入可工作状态
+BluetoolFixup.kext：Lilu插件，acdt团队编写的在用户层修补蓝牙守护程序bluetoothd使得其可以以USB传输协议驱动大部分的蓝牙硬件
+IntelBTPatcher.kext：Lilu插件，内核层修补蓝牙堆栈、USB堆栈，使其兼容Intel蓝牙 一般不需要

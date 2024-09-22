@@ -21,5 +21,7 @@ framebuffer-unifiedmem：设置核显能调用的显存大小（实际使用的�
 
 
 IntelBluetoothFirmware.kext：固件驱动，上传固件驱动并让Intel蓝牙硬件进入可工作状态
+
 BluetoolFixup.kext：Lilu插件，acdt团队编写的在用户层修补蓝牙守护程序bluetoothd使得其可以以USB传输协议驱动大部分的蓝牙硬件
+
 IntelBTPatcher.kext：Lilu插件，内核层修补蓝牙堆栈、USB堆栈，使其兼容Intel蓝牙 一般不需要
